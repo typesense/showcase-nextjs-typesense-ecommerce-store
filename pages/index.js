@@ -51,8 +51,8 @@ export default function Home() {
           <div className="container-fluid px-md-5 pt-4">
             <div className="row d-flex align-items-center">
               <div className="col-md">
-                <h1 className="display-4">
-                  Ecommerce Store with Typesense
+                <h1 className="display-6">
+                  Ecommerce Store with Typesense + Next.js + Vercel
                 </h1>
               </div>
               <div className="col-md-2 d-none d-md-block">
