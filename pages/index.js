@@ -74,13 +74,6 @@ export default function Home() {
               <li>See <a href="https://github.com/typesense/showcase-nextjs-typesense-ecommerce-store" target="_blank" rel="noreferrer">Source
                 Code</a>.</li>
             </ul>
-            <div className="lead mt-1">
-
-            </div>
-
-            <div className="lead mt-1">
-
-            </div>
 
             <div className="row mt-4">
               <div className="col-md-3 pr-md-5">
