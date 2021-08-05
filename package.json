@@ -16,6 +16,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-instantsearch-dom": "^6.12.1",
+    "rheostat": "^4.1.1",
     "sass": "^1.37.5",
     "typesense-instantsearch-adapter": "^2.0.1"
   },

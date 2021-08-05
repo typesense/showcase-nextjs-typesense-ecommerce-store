@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import TypesenseInstantSearchAdapter from "typesense-instantsearch-adapter";
-import {InstantSearch, SearchBox, Hits, HierarchicalMenu, RefinementList} from 'react-instantsearch-dom'
+import {InstantSearch, SearchBox, Hits, HierarchicalMenu, RefinementList, ToggleRefinement} from 'react-instantsearch-dom'
+import {RangeSlider} from "../components/RangeSlider";
 import {assembleTypesenseServerConfig} from '../lib/utils'
 
 // Initialize the Typesense Instantsearch adapter: https://github.com/typesense/typesense-instantsearch-adapter
@@ -87,12 +88,17 @@ export default function Home() {
 
                 <div className="mt-2">&nbsp;</div>
 
-                <div className="mt-5" id="toggle-refinement"></div>
+                <ToggleRefinement
+                  className="mt-5"
+                  attribute="free_shipping"
+                  label="Free Shipping"
+                  value={true}
+                />
 
                 <div className="mt-1">&nbsp;</div>
 
                 <h5 className="mt-5">Filter by Price</h5>
-                <div id="price-range-slider"></div>
+                <RangeSlider attribute="price" />
 
                 <div className="mt-1">&nbsp;</div>
 

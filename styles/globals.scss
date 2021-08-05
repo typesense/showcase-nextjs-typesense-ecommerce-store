@@ -55,33 +55,49 @@ body {
   }
 }
 
-// Source: https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/algolia-min.css
-
 // Range slider
-.ais-RangeSlider .rheostat {
+
+.DefaultProgressBar_progressBar {
+  background-color: $primary !important;
+}
+
+.DefaultProgressBar_background__horizontal {
+  height: 7px !important;
+  top: -1px !important;
+}
+
+.DefaultBackground_background__horizontal {
+  height: 8px !important;
+}
+
+.handleContainer {
+  top: -5px !important;
+}
+
+.rheostat {
   overflow: visible;
   margin-top: 40px;
   margin-bottom: 40px
 }
 
-.ais-RangeSlider .rheostat-background {
+.rheostat-background {
   height: 6px;
   top: 0;
   width: 100%
 }
 
-.ais-RangeSlider .rheostat-handle {
+.rheostat-handle {
   margin-left: -12px;
   top: -7px
 }
 
-.ais-RangeSlider .rheostat-background {
+.rheostat-background {
   position: relative;
   background-color: #fff;
   border: 1px solid #aaa
 }
 
-.ais-RangeSlider .rheostat-progress {
+.rheostat-progress {
   position: absolute;
   top: 1px;
   height: 4px;
@@ -207,5 +223,13 @@ body {
 }
 
 .ais-RefinementList-checkbox {
+  @extend .me-2;
+}
+
+.ais-ToggleRefinement-label {
+  @extend .d-flex, .align-items-center;
+}
+
+.ais-ToggleRefinement-checkbox {
   @extend .me-2;
 }
