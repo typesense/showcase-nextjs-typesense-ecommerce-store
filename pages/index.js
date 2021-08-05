@@ -12,7 +12,8 @@ import {
   ClearRefinements,
   Stats,
   HitsPerPage,
-  SortBy
+  SortBy,
+  Pagination
 } from 'react-instantsearch-dom'
 import {RangeSlider} from "../components/RangeSlider";
 import {assembleTypesenseServerConfig} from '../lib/utils'
@@ -63,9 +64,8 @@ export default function Home() {
               Typesense can also be used to build <strong className="marker-highlight">browsing
               experiences</strong> like
               product listing pages in an ecommerce
-              store •
-              <a href="https://github.com/typesense/showcase-ecommerce-store" target="_blank" rel="noreferrer">Source
-                Code</a>
+              store • <a href="https://github.com/typesense/showcase-ecommerce-store" target="_blank" rel="noreferrer">Source
+              Code</a>
             </p>
 
 
@@ -174,7 +174,7 @@ export default function Home() {
 
                 <div className="row">
                   <div className="col-sm">
-                    <div id="pagination"></div>
+                    <Pagination />
                   </div>
                 </div>
               </div>

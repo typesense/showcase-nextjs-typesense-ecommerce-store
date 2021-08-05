@@ -266,3 +266,21 @@ body {
 .ais-HitsPerPage-select:focus, .ais-SortBy-select:focus {
   box-shadow: none;
 }
+
+// Search Box
+
+.ais-SearchBox-input {
+  @extend .form-control, .form-control-sm, .border, .border-light, .text-dark;
+}
+
+.ais-SearchBox-submit {
+  @extend .d-none;
+}
+
+// Pagination
+.ais-Pagination-list { @extend .d-flex, .flex-row, .justify-content-end; }
+.ais-Pagination-item { @extend .px-2, .d-block; }
+.ais-Pagination-link { @extend .text-decoration-none; }
+.ais-Pagination-item--disabled { @extend .text-muted; }
+.ais-Pagination-item--selected { @extend .fw-bold, .text-primary; }
+
