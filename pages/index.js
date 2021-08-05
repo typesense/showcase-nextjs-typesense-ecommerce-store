@@ -69,6 +69,7 @@ export default function Home() {
             </div>
             <ul className="lead mt-1">
               <li>Product data to render the grid is fetched by the front-end from a <strong>Geo-Distributed Typesense Cloud cluster</strong> with nodes in Oregon, Frankfurt and Mumbai.</li>
+              {/* eslint-disable-next-line react/no-unescaped-entities */}
               <li>Product API Requests are routed to the node that is closest to the user's location, like a CDN. This reduces latency even more for your users, as they browse products.</li>
               <li>The front-end uses Next.js, is statically generated and is hosted on Vercel.</li>
               <li>See <a href="https://github.com/typesense/showcase-nextjs-typesense-ecommerce-store" target="_blank" rel="noreferrer">Source
