@@ -3,7 +3,7 @@
 This is a demo that shows how you can use [Typesense's](https://github.com/typesense/typesense) feature set,
 to build not just a search experience, but also a full-fledged product browsing experience for an ecommerce store.
 
-See it live here: TODO
+See it live here: <https://showcase-nextjs-typesense-ecommerce-store.vercel.app>
 
 ## Tech Stack
 
