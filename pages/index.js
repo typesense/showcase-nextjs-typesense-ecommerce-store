@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import TypesenseInstantSearchAdapter from "typesense-instantsearch-adapter";
-import {InstantSearch, SearchBox, Hits, HierarchicalMenu, RefinementList, ToggleRefinement, RatingMenu} from 'react-instantsearch-dom'
+import {InstantSearch, SearchBox, Hits, HierarchicalMenu, RefinementList, ToggleRefinement, RatingMenu, ClearRefinements, Stats} from 'react-instantsearch-dom'
 import {RangeSlider} from "../components/RangeSlider";
 import {assembleTypesenseServerConfig} from '../lib/utils'
 
@@ -110,7 +110,7 @@ export default function Home() {
 
                 <div className="mt-1">&nbsp;</div>
 
-                <div id="clear-refinements" className="mt-5"></div>
+                <ClearRefinements className="mt-5" />
               </div>
               <div className="col-md">
 
@@ -120,7 +120,19 @@ export default function Home() {
                       <div className="col-md">
                       </div>
                       <div className="col-md d-flex justify-content-end align-items-center">
-                        <div id="stats"></div>
+                        <Stats translations={{
+                          stats(nbHits, processingTimeMS) {
+                            let hitCountPhrase
+                            if(nbHits === 0) {
+                              hitCountPhrase = 'No products'
+                            } else if(nbHits === 1) {
+                              hitCountPhrase = '1 product'
+                            } else {
+                              hitCountPhrase = `${nbHits.toLocaleString()} products`
+                            }
+                            return `${hitCountPhrase} found in ${processingTimeMS.toLocaleString()}ms`;
+                          },
+                        }}/>
                         <div id="hits-per-page"></div>
                         <div id="sort-by"></div>
                       </div>

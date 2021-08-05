@@ -246,3 +246,13 @@ body {
 .ais-RatingMenu-count { @extend .badge, .text-dark-2, .ms-2; }
 .ais-RatingMenu-disabledItem { @extend .text-muted; }
 .ais-RatingMenu-selectedItem { @extend .fw-bold, .text-primary; }
+
+// Clear Refinements
+
+.ais-ClearRefinements-button {
+  @extend .btn, .btn-primary;
+}
+
+.ais-Stats-text {
+  @extend .small;
+}
