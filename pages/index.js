@@ -65,7 +65,7 @@ export default function Home() {
               Typesense can also be used to build <strong className="marker-highlight">browsing
               experiences</strong> like
               product listing pages in an ecommerce
-              store • <a href="https://github.com/typesense/showcase-ecommerce-store" target="_blank" rel="noreferrer">Source
+              store • <a href="https://github.com/jasonbosco/showcase-nextjs-typesense-ecommerce-store" target="_blank" rel="noreferrer">Source
               Code</a>
             </p>
 

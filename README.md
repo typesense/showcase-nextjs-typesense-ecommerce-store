@@ -27,7 +27,7 @@ Open http://localhost:3000 to see the app.
 
 ## Deployment
 
-This demo is hosted on Vercel. Pushing to master will automatically trigger a deployment.
+This demo is hosted on Vercel. Pushing to master of [this fork](https://github.com/jasonbosco/showcase-nextjs-typesense-ecommerce-store) will automatically trigger a deployment.
 
 ## Credits
 
