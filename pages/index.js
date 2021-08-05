@@ -13,9 +13,10 @@ import {
   Stats,
   HitsPerPage,
   SortBy,
-  Pagination
+  Pagination,
 } from 'react-instantsearch-dom'
 import {RangeSlider} from "../components/RangeSlider";
+import {Hit} from "../components/Hit";
 import {assembleTypesenseServerConfig} from '../lib/utils'
 
 // Initialize the Typesense Instantsearch adapter: https://github.com/typesense/typesense-instantsearch-adapter
@@ -168,7 +169,7 @@ export default function Home() {
 
                 <div className="row mt-1">
                   <div className="col-sm">
-                    <div id="hits"></div>
+                    <Hits hitComponent={Hit}/>
                   </div>
                 </div>
 

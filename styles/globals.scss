@@ -273,7 +273,7 @@ body {
   @extend .form-control, .form-control-sm, .border, .border-light, .text-dark;
 }
 
-.ais-SearchBox-submit {
+.ais-SearchBox-submit, .ais-SearchBox-reset {
   @extend .d-none;
 }
 
@@ -284,3 +284,8 @@ body {
 .ais-Pagination-item--disabled { @extend .text-muted; }
 .ais-Pagination-item--selected { @extend .fw-bold, .text-primary; }
 
+// Hits
+.ais-Hits-list { @extend .list-unstyled, .grid-container; }
+.ais-Hits-item { @extend .d-flex, .flex-column, .search-result-card, .mb-1, .ms-1, .p-3; }
+.ais-Hits-loadMore { @extend .btn, .btn-primary, .mx-auto, .d-block, .mt-4; }
+.ais-Hits-disabledLoadMore { @extend .btn, .btn-dark, .mx-auto, .d-block, .mt-4; }
