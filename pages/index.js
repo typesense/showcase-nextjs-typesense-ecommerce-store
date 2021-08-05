@@ -60,15 +60,27 @@ export default function Home() {
               </div>
             </div>
 
-            <p className="lead mt-2">
-              In addition to search experiences,
+            <div className="lead mt-2">
+              Besides search experiences,
               Typesense can also be used to build <strong className="marker-highlight">blazing fast</strong>, <strong className="marker-highlight">browsing
               experiences</strong> like
               product listing pages in an ecommerce
-              store • <a href="https://github.com/typesense/showcase-nextjs-typesense-ecommerce-store" target="_blank" rel="noreferrer">Source
-              Code</a>
-            </p>
+              store.
+            </div>
+            <ul className="lead mt-1">
+              <li>Product data to render the grid is fetched by the front-end from a <strong>Geo-Distributed Typesense Cloud cluster</strong> with nodes in Oregon, Frankfurt and Mumbai.</li>
+              <li>Product API Requests are routed to the node that is closest to the user's location, like a CDN. This reduces latency even more for your users, as they browse products.</li>
+              <li>The front-end uses Next.js, is statically generated and is hosted on Vercel.</li>
+              <li>See <a href="https://github.com/typesense/showcase-nextjs-typesense-ecommerce-store" target="_blank" rel="noreferrer">Source
+                Code</a>.</li>
+            </ul>
+            <div className="lead mt-1">
 
+            </div>
+
+            <div className="lead mt-1">
+
+            </div>
 
             <div className="row mt-4">
               <div className="col-md-3 pr-md-5">
