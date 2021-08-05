@@ -6,15 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "indexer": "node scripts/populateTypesenseIndex.js",
+    "typesenseServer": "docker run -i -p 8108:8108 -v`pwd`/typesense-server-data/:/data typesense/typesense:0.22.0.rc4 --data-dir /data --api-key=xyz --listen-port 8108 --enable-cors"
   },
   "dependencies": {
+    "bootstrap": "5.1.0",
     "next": "11.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-instantsearch-dom": "^6.12.1",
+    "sass": "^1.37.5",
+    "typesense-instantsearch-adapter": "^2.0.1"
   },
   "devDependencies": {
     "eslint": "7.32.0",
-    "eslint-config-next": "11.0.1"
+    "eslint-config-next": "11.0.1",
+    "eslint-config-prettier": "^8.3.0"
   }
 }
