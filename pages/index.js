@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import TypesenseInstantSearchAdapter from "typesense-instantsearch-adapter";
-import {InstantSearch, SearchBox, Hits, HierarchicalMenu, RefinementList, ToggleRefinement} from 'react-instantsearch-dom'
+import {InstantSearch, SearchBox, Hits, HierarchicalMenu, RefinementList, ToggleRefinement, RatingMenu} from 'react-instantsearch-dom'
 import {RangeSlider} from "../components/RangeSlider";
 import {assembleTypesenseServerConfig} from '../lib/utils'
 
@@ -103,7 +103,10 @@ export default function Home() {
                 <div className="mt-1">&nbsp;</div>
 
                 <h5 className="mt-5">Filter by Rating</h5>
-                <div id="rating-menu" className="mt-3"></div>
+                <RatingMenu
+                  className="mt-3"
+                  attribute="rating"
+                />
 
                 <div className="mt-1">&nbsp;</div>
 
