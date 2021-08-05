@@ -1,7 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import TypesenseInstantSearchAdapter from "typesense-instantsearch-adapter";
-import {InstantSearch, SearchBox, Hits, HierarchicalMenu, RefinementList, ToggleRefinement, RatingMenu, ClearRefinements, Stats} from 'react-instantsearch-dom'
+import {
+  InstantSearch,
+  SearchBox,
+  Hits,
+  HierarchicalMenu,
+  RefinementList,
+  ToggleRefinement,
+  RatingMenu,
+  ClearRefinements,
+  Stats,
+  HitsPerPage,
+  SortBy
+} from 'react-instantsearch-dom'
 import {RangeSlider} from "../components/RangeSlider";
 import {assembleTypesenseServerConfig} from '../lib/utils'
 
@@ -98,7 +110,7 @@ export default function Home() {
                 <div className="mt-1">&nbsp;</div>
 
                 <h5 className="mt-5">Filter by Price</h5>
-                <RangeSlider attribute="price" />
+                <RangeSlider attribute="price"/>
 
                 <div className="mt-1">&nbsp;</div>
 
@@ -110,22 +122,22 @@ export default function Home() {
 
                 <div className="mt-1">&nbsp;</div>
 
-                <ClearRefinements className="mt-5" />
+                <ClearRefinements className="mt-5"/>
               </div>
               <div className="col-md">
 
                 <div className="row mt-5 mt-md-0">
                   <div className="col-md">
                     <div className="row">
-                      <div className="col-md">
+                      <div className="col-md-4">
                       </div>
-                      <div className="col-md d-flex justify-content-end align-items-center">
+                      <div className="col-md-8 d-flex justify-content-end align-items-center">
                         <Stats translations={{
                           stats(nbHits, processingTimeMS) {
                             let hitCountPhrase
-                            if(nbHits === 0) {
+                            if (nbHits === 0) {
                               hitCountPhrase = 'No products'
-                            } else if(nbHits === 1) {
+                            } else if (nbHits === 1) {
                               hitCountPhrase = '1 product'
                             } else {
                               hitCountPhrase = `${nbHits.toLocaleString()} products`
@@ -133,8 +145,22 @@ export default function Home() {
                             return `${hitCountPhrase} found in ${processingTimeMS.toLocaleString()}ms`;
                           },
                         }}/>
-                        <div id="hits-per-page"></div>
-                        <div id="sort-by"></div>
+                        <HitsPerPage
+                          className="ms-4"
+                          items={[
+                            {label: '9 per page', value: 9},
+                            {label: '18 per page', value: 18}
+                          ]}
+                          defaultRefinement={9}
+                        />
+                        <SortBy
+                          items={[
+                            {label: 'Relevancy', value: 'products'},
+                            {label: 'Price (asc)', value: 'products/sort/price:asc'},
+                            {label: 'Price (desc)', value: 'products/sort/price:desc'},
+                          ]}
+                          defaultRefinement="products"
+                        />
                       </div>
                     </div>
                   </div>

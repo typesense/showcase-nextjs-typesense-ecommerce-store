@@ -256,3 +256,13 @@ body {
 .ais-Stats-text {
   @extend .small;
 }
+
+.ais-HitsPerPage-select, .ais-SortBy-select {
+  @extend .form-select, .form-select-sm;
+  border: none;
+  color: $black;
+}
+
+.ais-HitsPerPage-select:focus, .ais-SortBy-select:focus {
+  box-shadow: none;
+}
