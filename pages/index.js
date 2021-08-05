@@ -62,7 +62,7 @@ export default function Home() {
 
             <p className="lead mt-2">
               In addition to search experiences,
-              Typesense can also be used to build <strong className="marker-highlight">browsing
+              Typesense can also be used to build <strong className="marker-highlight">blazing fast</strong>, <strong className="marker-highlight">browsing
               experiences</strong> like
               product listing pages in an ecommerce
               store • <a href="https://github.com/jasonbosco/showcase-nextjs-typesense-ecommerce-store" target="_blank" rel="noreferrer">Source
