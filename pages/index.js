@@ -18,7 +18,7 @@ import {
 import {RangeSlider} from "../components/RangeSlider";
 import {Hit} from "../components/Hit";
 import {assembleTypesenseServerConfig} from '../lib/utils'
-import { findResultsState } from 'react-instantsearch-dom/server';
+import {findResultsState} from 'react-instantsearch-dom/server';
 
 // Initialize the Typesense Instantsearch adapter: https://github.com/typesense/typesense-instantsearch-adapter
 const TYPESENSE_SERVER_CONFIG = assembleTypesenseServerConfig()
@@ -214,7 +214,9 @@ export default function Home({
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps({res}) {
+  res.setHeader("Cache-Control", `s-maxage=${1 * 60 * 60}, stale-while-revalidate=${24 * 60 * 60}`);
+
   const resultsState = await findResultsState(Home, {
     indexName: "products",
     searchClient: typesenseInstantsearchAdapter.searchClient
