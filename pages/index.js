@@ -18,6 +18,7 @@ import {
 import {RangeSlider} from "../components/RangeSlider";
 import {Hit} from "../components/Hit";
 import {assembleTypesenseServerConfig} from '../lib/utils'
+import { findResultsState } from 'react-instantsearch-dom/server';
 
 // Initialize the Typesense Instantsearch adapter: https://github.com/typesense/typesense-instantsearch-adapter
 const TYPESENSE_SERVER_CONFIG = assembleTypesenseServerConfig()
@@ -36,9 +37,15 @@ const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
     // pinnedHits: "23:2"
   },
 });
-const searchClient = typesenseInstantsearchAdapter.searchClient;
 
-export default function Home() {
+export default function Home({
+                               searchClient = typesenseInstantsearchAdapter.searchClient,
+                               searchState,
+                               resultsState,
+                               onSearchParameters,
+                               widgetsCollector,
+                               ...props
+                             }) {
   return (
     <div>
       <Head>
@@ -47,7 +54,13 @@ export default function Home() {
       </Head>
 
       <main>
-        <InstantSearch indexName="products" searchClient={searchClient}>
+        <InstantSearch indexName="products"
+                       {...props}
+                       searchClient={searchClient}
+                       searchState={searchState}
+                       resultsState={resultsState}
+                       onSearchParameters={onSearchParameters}
+                       widgetsCollector={widgetsCollector}>
           <div className="container-fluid px-md-5 pt-4">
             <div className="row d-flex align-items-center">
               <div className="col-md">
@@ -62,18 +75,26 @@ export default function Home() {
 
             <div className="lead mt-2">
               Besides search experiences,
-              Typesense can also be used to build <strong className="marker-highlight">blazing fast</strong>, <strong className="marker-highlight">browsing
+              Typesense can also be used to build <strong className="marker-highlight">blazing fast</strong>, <strong
+              className="marker-highlight">browsing
               experiences</strong> like
               product listing pages in an ecommerce
               store.
             </div>
             <ul className="lead mt-1">
-              <li>Product data to render the grid is fetched by the front-end from a <strong>Geo-Distributed Typesense Cloud cluster</strong> with nodes in Oregon, Frankfurt and Mumbai.</li>
+              <li>Product data to render the grid is fetched by the front-end from a <strong>Geo-Distributed Typesense
+                Cloud cluster</strong> with nodes in Oregon, Frankfurt and Mumbai.
+              </li>
               {/* eslint-disable-next-line react/no-unescaped-entities */}
-              <li>Product API Requests are routed to the node that is closest to the user's location, like a CDN. Since data is geographically distributed, this reduces latency even more for your users, as they browse products.</li>
+              <li>Product API Requests are routed to the node that is closest to the user's location, like a CDN. Since
+                data is geographically distributed, this reduces latency even more for your users, as they browse
+                products.
+              </li>
               <li>The front-end uses Next.js, is statically generated and is hosted on Vercel.</li>
-              <li>See <a href="https://github.com/typesense/showcase-nextjs-typesense-ecommerce-store" target="_blank" rel="noreferrer">Source
-                Code</a>.</li>
+              <li>See <a href="https://github.com/typesense/showcase-nextjs-typesense-ecommerce-store" target="_blank"
+                         rel="noreferrer">Source
+                Code</a>.
+              </li>
             </ul>
 
             <div className="row mt-4">
@@ -181,7 +202,7 @@ export default function Home() {
 
                 <div className="row">
                   <div className="col-sm">
-                    <Pagination />
+                    <Pagination/>
                   </div>
                 </div>
               </div>
@@ -191,4 +212,17 @@ export default function Home() {
       </main>
     </div>
   )
+}
+
+export async function getServerSideProps(context) {
+  const resultsState = await findResultsState(Home, {
+    indexName: "products",
+    searchClient: typesenseInstantsearchAdapter.searchClient
+  });
+
+  return {
+    props: {
+      resultsState: JSON.parse(JSON.stringify(resultsState)),
+    }
+  }
 }
