@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "indexer": "node scripts/populateTypesenseIndex.js",
-    "typesenseServer": "docker run -i -p 8108:8108 -v`pwd`/typesense-server-data/:/data typesense/typesense:0.22.0.rc4 --data-dir /data --api-key=xyz --listen-port 8108 --enable-cors"
+    "typesenseServer": "docker run -i -p 8108:8108 -v`pwd`/typesense-server-data/:/data typesense/typesense:0.22.0.rcu6 --data-dir /data --api-key=xyz --listen-port 8108 --enable-cors"
   },
   "dependencies": {
     "bootstrap": "5.1.0",
