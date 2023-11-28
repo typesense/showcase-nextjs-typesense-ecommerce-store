@@ -11,18 +11,18 @@
     "typesenseServer": "docker run -i -p 8108:8108 -v`pwd`/typesense-server-data/:/data typesense/typesense:0.22.0.rcu6 --data-dir /data --api-key=xyz --listen-port 8108 --enable-cors"
   },
   "dependencies": {
-    "bootstrap": "5.1.0",
-    "next": "11.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-instantsearch-dom": "^6.12.1",
-    "rheostat": "^4.1.1",
-    "sass": "^1.37.5",
-    "typesense-instantsearch-adapter": "^2.0.1"
+    "bootstrap": "5.3.2",
+    "next": "14.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-instantsearch": "^7.3.0",
+    "react-instantsearch-router-nextjs": "^7.3.0",
+    "sass": "^1.69.5",
+    "typesense-instantsearch-adapter": "^2.7.1"
   },
   "devDependencies": {
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.0.1",
-    "eslint-config-prettier": "^8.3.0"
+    "eslint": "8.54.0",
+    "eslint-config-next": "14.0.3",
+    "eslint-config-prettier": "^9.0.0"
   }
 }

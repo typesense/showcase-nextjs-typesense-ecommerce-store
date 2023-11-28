@@ -55,93 +55,18 @@ body {
   }
 }
 
-// Range slider
-
-.DefaultProgressBar_progressBar {
-  background-color: $primary !important;
+// Range input
+.ais-RangeInput-input {
+  @extend .form-control, .form-control-sm, .form-control-secondary, .mb-2;
 }
 
-.DefaultProgressBar_background__horizontal {
-  height: 7px !important;
-  top: -1px !important;
+.ais-RangeInput-separator {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.DefaultBackground_background__horizontal {
-  height: 8px !important;
-}
-
-.handleContainer {
-  top: -5px !important;
-}
-
-.rheostat {
-  overflow: visible;
-  margin-top: 40px;
-  margin-bottom: 40px
-}
-
-.rheostat-background {
-  height: 6px;
-  top: 0;
-  width: 100%
-}
-
-.rheostat-handle {
-  margin-left: -12px;
-  top: -7px
-}
-
-.rheostat-background {
-  position: relative;
-  background-color: #fff;
-  border: 1px solid #aaa
-}
-
-.rheostat-progress {
-  position: absolute;
-  top: 1px;
-  height: 4px;
-  background-color: $primary
-}
-
-.rheostat-handle {
-  position: relative;
-  z-index: 1;
-  width: 17px;
-  height: 17px;
-  background-color: #fff;
-  border: 1px solid #333;
-  border-radius: 50%;
-  cursor: -webkit-grab;
-  cursor: grab
-}
-
-.rheostat-marker {
-  margin-left: -1px;
-  position: absolute;
-  width: 1px;
-  height: 5px;
-  background-color: #aaa
-}
-
-.rheostat-marker--large {
-  height: 9px
-}
-
-.rheostat-value {
-  padding-top: 15px
-}
-
-.rheostat-tooltip, .rheostat-value {
-  margin-left: 50%;
-  position: absolute;
-  text-align: center;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%)
-}
-
-.rheostat-tooltip {
-  top: -22px
+.ais-RangeInput-submit {
+  @extend .btn, .btn-secondary, .btn-sm, .ms-2;
 }
 
 // Rating icon

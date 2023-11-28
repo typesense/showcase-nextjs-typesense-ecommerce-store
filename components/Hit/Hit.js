@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {Highlight} from "react-instantsearch-dom";
+import {Highlight} from "react-instantsearch";
 
 const Hit = ({hit}) => <div>
   <div className="row image-container">
