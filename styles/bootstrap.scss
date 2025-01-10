@@ -1,12 +1,14 @@
+@use "sass:color";
+
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
-$primary: #C7C402;
-$secondary: #C7C402;
+$primary: #c7c402;
+$secondary: #c7c402;
 $gray-100: #e8e8e8;
 $gray-200: #d1d1d1;
 $gray-300: #bbbbbb;
 $gray-400: #a4a4a4;
-$gray-500: #8D8D8D;
+$gray-500: #8d8d8d;
 $gray-600: #717171;
 $gray-700: #555555;
 $gray-800: #383838;
@@ -25,8 +27,9 @@ $input-font-weight: 400;
 $input-color: $primary;
 $input-bg: $white;
 $input-border-color: $primary;
-$input-focus-border-color: darken($primary, 5%);
-$input-btn-focus-box-shadow:  0 0 15px 0.2em rgba($input-focus-border-color, 0.25);
+$input-focus-border-color: color.adjust($primary, $lightness: -5%, $space: hsl);
+$input-btn-focus-box-shadow: 0 0 15px 0.2em
+  rgba($input-focus-border-color, 0.25);
 
 $component-active-bg: $secondary;
 $custom-select-color: $gray-800;
@@ -35,7 +38,7 @@ $input-btn-padding-x-sm: 0.9rem;
 $input-btn-padding-y-sm: 0.4rem;
 
 $input-padding-x: 1.3rem;
-$input-padding-y: .8rem;
+$input-padding-y: 0.8rem;
 
 $font-family-sans-serif: 'Nunito Sans', monospace;
 $font-size-base: 0.85rem;
@@ -57,13 +60,13 @@ $badge-padding-y: 0.75em;
 $enable-rounded: false;
 $enable-responsive-font-sizes: true;
 
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
 .font-letter-spacing-tight {
   letter-spacing: -0.05rem;
 }
 
-input[type=search] {
+input[type='search'] {
   letter-spacing: -0.05em;
 }
 
